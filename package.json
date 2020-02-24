@@ -1,0 +1,80 @@
+{
+	"publisher": "forward-slasher",
+	"author": {
+		"name": "jhon alino"
+	},
+	"name": "forward-slasher",
+	"displayName": "forward slasher",
+	"description": "reads a file path and convert its backslash to forward slash and copies it to clipboard",
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.29.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"galleryBanner": {
+		"color": "#ff1493",
+		"theme": "dark"
+	},
+	"icon": "icon.jpg",
+	"activationEvents": [
+		"onCommand:extension.forwardSlasher",
+		"onCommand:extension.forwardSlasherPublish",
+		"onCommand:extension.forwardSlasherCommit"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.forwardSlasher",
+				"title": "Forward Slasher"
+			},
+			{
+				"command": "extension.forwardSlasherPublish",
+				"title": "Publish Forward Slasher"
+			},
+			{
+				"command": "extension.forwardSlasherCommit",
+				"title": "Commit Forward Slasher"
+			}
+		],
+
+		"keybindings": [
+			{
+				"command": "extension.forwardSlasher",
+				"key": "shift+alt+C"
+			}
+		],
+		"menus": {
+			"editor/title/context": [
+				{
+					"command": "extension.forwardSlasher",
+					"group": "forward-slasher"
+				},
+				{
+					"command": "extension.forwardSlasherPublish",
+					"group": "forward-slasher"
+				},
+				{
+					"command": "extension.forwardSlasherCommit",
+					"group": "forward-slasher"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25",
+		"eslint": "^4.11.0",
+		"@types/node": "^8.10.25",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"clipboardy": "^1.2.3"
+	}
+}
